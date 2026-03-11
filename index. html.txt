@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fitness G.A.B</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f4f4f4;
+color:#333;
+}
+
+/* NAV */
+
+nav{
+background:#111;
+padding:18px;
+display:flex;
+justify-content:center;
+gap:30px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#00d4ff;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48");
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 40px;
+border:none;
+background:#00d4ff;
+color:black;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+font-size:18px;
+}
+
+/* SECCIONES */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARDS */
+
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* HORARIO */
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+padding:14px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#111;
+color:white;
+}
+
+/* FORMULARIO */
+
+form{
+background:white;
+padding:30px;
+border-radius:10px;
+max-width:500px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+background:#00d4ff;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* IMC */
+
+.imc{
+max-width:400px;
+margin:auto;
+text-align:center;
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#servicios">Servicios</a>
+<a href="#instalaciones">Instalaciones</a>
+<a href="#horarios">Horarios</a>
+<a href="#reserva">Reserva</a>
+<a href="#economia">Plan económico</a>
+</nav>
+
+<section class="hero">
+<h1>Fitness G.A.B</h1>
+<p>Transforma tu cuerpo, mejora tu vida</p>
+<button onclick="scrollToSection('servicios')">Descubrir más</button>
+</section>
+
+<section class="section" id="servicios">
+<h2>Servicios</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1">
+<div class="card-content">
+<h3>Entrenamiento Personal</h3>
+<p>Planes personalizados para lograr tus objetivos.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2">
+<div class="card-content">
+<h3>Clases Dirigidas</h3>
+<p>HIIT, spinning, cross training y más.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b">
+<div class="card-content">
+<h3>Nutrición</h3>
+<p>Asesoramiento nutricional deportivo.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="instalaciones">
+<h2>Instalaciones</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581009137042-c552e485697a">
+<div class="card-content">
+<h3>Sala de Musculación</h3>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+<div class="card-content">
+<h3>Zona Cardio</h3>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+<div class="card-content">
+<h3>Zona Funcional</h3>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="horarios">
+<h2>Horarios</h2>
+
+<table>
+<tr>
+<th>Día</th>
+<th>Actividad</th>
+<th>Hora</th>
+</tr>
+
+<tr>
+<td>Lunes</td>
+<td>Cross Training</td>
+<td>18:00</td>
+</tr>
+
+<tr>
+<td>Martes</td>
+<td>Spinning</td>
+<td>19:00</td>
+</tr>
+
+<tr>
+<td>Miércoles</td>
+<td>HIIT</td>
+<td>18:30</td>
+</tr>
+
+</table>
+
+</section>
+
+<section class="section" id="reserva">
+
+<h2>Reserva una clase</h2>
+
+<form>
+
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Email" required>
+
+<select>
+<option>Cross Training</option>
+<option>Spinning</option>
+<option>HIIT</option>
+</select>
+
+<input type="date">
+
+<button>Reservar</button>
+
+</form>
+
+</section>
+
+<section class="section">
+
+<h2>Calculadora de IMC</h2>
+
+<div class="imc">
+
+<input type="number" id="peso" placeholder="Peso (kg)">
+<input type="number" id="altura" placeholder="Altura (cm)">
+
+<button onclick="calcularIMC()">Calcular</button>
+
+<p id="resultado"></p>
+
+</div>
+
+</section>
+
+<section class="section" id="economia">
+
+<h2>Plan económico</h2>
+
+<canvas id="grafico"></canvas>
+
+</section>
+
+<footer>
+
+<p>Fitness G.A.B © 2026</p>
+
+</footer>
+
+<script>
+
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function calcularIMC(){
+
+let peso=document.getElementById("peso").value;
+let altura=document.getElementById("altura").value/100;
+
+let imc=peso/(altura*altura);
+
+document.getElementById("resultado").innerText=
+"Tu IMC es: "+imc.toFixed(2);
+
+}
+
+const ctx=document.getElementById('grafico');
+
+new Chart(ctx,{
+type:'bar',
+data:{
+labels:['Maquinaria','Local','Marketing','Otros'],
+datasets:[{
+label:'Inversión inicial €',
+data:[15000,10000,3000,2000]
+}]
+}
+});
+
+</script>
+
+</body>
+</html>
